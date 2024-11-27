@@ -66,6 +66,35 @@
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script>
+        // Function to handle window resize event
+        function handleResize() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            console.log(`Window resized to: ${width}x${height}`);
+
+            // Example: Adjust font size based on screen width
+            const h1Element = document.querySelector('h1');
+            const pElement = document.querySelector('.bottom-text p');
+            const ctaButton = document.querySelector('.cta-button');
+
+            if (width < 600) {
+                h1Element.style.fontSize = '3em';
+                pElement.style.fontSize = '1.2em';
+                ctaButton.style.marginTop = '100px';
+            } else {
+                h1Element.style.fontSize = '4em';
+                pElement.style.fontSize = '1.5em';
+                ctaButton.style.marginTop = '140px';
+            }
+        }
+
+        // Add event listener for window resize
+        window.addEventListener('resize', handleResize);
+
+        // Call handleResize once to set initial styles
+        handleResize();
+    </script>
 </head>
 <body>
     <div class="overlay">

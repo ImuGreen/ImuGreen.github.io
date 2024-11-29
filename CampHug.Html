@@ -64,16 +64,58 @@
             transform: translateX(-50%);
             white-space: nowrap;
         }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 3em;
+            }
+            p {
+                font-size: 1.2em;
+            }
+            .cta-button {
+                margin-top: 100px;
+            }
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script>
+        // Function to handle window resize event
+        function handleResize() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            console.log(`Window resized to: ${width}x${height}`);
+
+            // Example: Adjust font size based on screen width
+            const h1Element = document.querySelector('h1');
+            const pElement = document.querySelector('.bottom-text p');
+            const ctaButton = document.querySelector('.cta-button');
+
+            if (width < 600) {
+                h1Element.style.fontSize = '3em';
+                pElement.style.fontSize = '1.2em';
+                ctaButton.style.marginTop = '100px';
+            } else {
+                h1Element.style.fontSize = '4em';
+                pElement.style.fontSize = '1.5em';
+                ctaButton.style.marginTop = '140px';
+            }
+        }
+
+        // Add event listener for window resize
+        window.addEventListener('resize', handleResize);
+
+        // Call handleResize once to set initial styles
+        handleResize();
+    </script>
 </head>
 <body>
     <div class="overlay">
         <h1><span>C</span>ampHug</h1>
-        <a href="https://docs.google.com/forms/your-google-form-link" class="cta-button" target="_blank">Apply</a>
+        <a href="https://forms.gle/3RxNx3uU89UwR7tf6" class="cta-button" target="_blank">Apply</a>
     </div>
     <div class="bottom-text">
-        <p><span>C</span>elebrating Our Innate Technologies Inherent Throughout, By Cultivating Loving Expressions Of Symbiosis</p>
+        <p><span>C</span>elebrating Our Innate Technologies Inherent Throughout, <span>C</span>ultivating Loving Expressions Of Symbiosis</p>
     </div>
 </body>
 </html>

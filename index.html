@@ -23,13 +23,13 @@
             text-align: center;
             width: 80%;
             max-width: 600px;
-            margin-top: -40px; /* Adjusted to move the overlay up slightly */
         }
         h1 {
             font-family: 'Pacifico', cursive;
             font-size: 4em;
             color: #ffcc00;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 0;
         }
         h1 span {
             font-weight: bold; /* Bold the C in CampHug */
@@ -39,7 +39,7 @@
             line-height: 1.6;
             color: #fff;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-            margin-top: -50px; /* Added margin to separate from the button */
+            margin: 20px 0;
         }
         p span {
             font-weight: bold; /* Bold the C in the bottom text */
@@ -51,7 +51,6 @@
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
-            margin-top: 140px; /* Increased margin to move the button lower */
             transition: background-color 0.3s ease;
         }
         .cta-button:hover {
@@ -59,10 +58,13 @@
         }
         .bottom-text {
             position: absolute;
-            bottom: 10px; /* Adjusted to move the bottom text lower */
+            bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
             white-space: nowrap;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
         }
 
         /* Media Queries for Responsiveness */
@@ -74,40 +76,15 @@
                 font-size: 1.2em;
             }
             .cta-button {
-                margin-top: 100px;
+                margin-top: 20px;
+            }
+            .bottom-text p {
+                font-size: 1em;
+                line-height: 1.4;
             }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <script>
-        // Function to handle window resize event
-        function handleResize() {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            console.log(`Window resized to: ${width}x${height}`);
-
-            // Example: Adjust font size based on screen width
-            const h1Element = document.querySelector('h1');
-            const pElement = document.querySelector('.bottom-text p');
-            const ctaButton = document.querySelector('.cta-button');
-
-            if (width < 600) {
-                h1Element.style.fontSize = '3em';
-                pElement.style.fontSize = '1.2em';
-                ctaButton.style.marginTop = '100px';
-            } else {
-                h1Element.style.fontSize = '4em';
-                pElement.style.fontSize = '1.5em';
-                ctaButton.style.marginTop = '140px';
-            }
-        }
-
-        // Add event listener for window resize
-        window.addEventListener('resize', handleResize);
-
-        // Call handleResize once to set initial styles
-        handleResize();
-    </script>
 </head>
 <body>
     <div class="overlay">
